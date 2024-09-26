@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <omp.h>
+
+unsigned long long factorial(int n) {
+    unsigned long long result = 1;
+
+    #pragma omp parallel for reduction(*:result)
+    for (int i = 1; i <= n; i++) {
+        result *= i;
+    }
+
+    return result;
+}
+
+int main() {
+    int num;
+
+    printf("Enter a non-negative integer to compute its factorial: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Factorial is not defined for negative integers.\n");
+        return 1;
+    }
+
+    unsigned long long result = factorial(num);
+    printf("Factorial of %d is %llu\n", num, result);
+
+    return 0;
+}
