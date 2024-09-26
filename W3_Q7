@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include<omp.h>
+#include<stdlib.h>
+#define num 10000000
+
+int main(){
+	int count =0,i;
+	#pragma omp parallel
+	
+	{
+		int local =0;
+		unsigned int seed=omp_get_thread_num();
+		# pragma omp for 
+		for (i = 0 ; i < num; i++){
+			double x = (double)rand()/RAND_MAX;
+			double y = (double)rand()/RAND_MAX;
+			if(x*x+y*y<=1.0){
+				local++;
+			}
+		}
+		#pragma omp atomic
+		count +=local;
+	}
+	double pi = 4.0*count/num;
+	printf("value of Pi is %f\t", pi);
+}
