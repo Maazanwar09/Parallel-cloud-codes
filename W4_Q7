@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <omp.h>
+int main() {
+	int i,n=5;
+    int vector_a[n];
+    int vector_b[n];
+    int result_vector[n];
+    for ( i = 0; i < n; i++) {
+        vector_a[i] = i + 1; 
+        vector_b[i] = (n - i);
+    }
+    printf("first array is : \n");
+    for(i=0;i<n;i++){
+    	printf("%d\n",vector_a[i]);
+	}
+	printf("second array is : \n");
+	for(i=0;i<n;i++){
+    	printf("%d\n",vector_b[i]);
+	}
+    #pragma omp parallel for
+    for (int i = 0; i < n; i++) {
+        result_vector[i] = vector_a[i] - vector_b[i]; 
+    }
+    printf("The results of the first 10 subtractions are:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", result_vector[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
