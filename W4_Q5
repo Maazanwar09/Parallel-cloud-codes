@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <omp.h>
+int main() {
+	int n=2;
+    int a[n],i;
+    int sum = 0; 
+    for ( i = 0; i < n; i++) {
+        a[i] = i + 1;
+    }
+    #pragma omp parallel
+    {
+        int local_sum = 0;
+        #pragma omp for
+        for ( i = 0; i < n; i++) {
+            local_sum += a[i];
+        }
+        #pragma omp critical
+        {
+            sum += local_sum;
+        }
+    }
+    printf("The sum of the array is: %d\n", sum);
+    return 0;
+}
