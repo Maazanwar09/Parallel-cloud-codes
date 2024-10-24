@@ -1,0 +1,6 @@
+Double the values in a large array of integers using multiple threads. Each 
+thread should work on a separate portion of the array. Use OpenMP to: 
+ Initialize each thread’s starting index and chunk size 
+(using firstprivate). 
+ Capture the last processed index for each thread (using lastprivate). 
+ Avoid implicit barriers at the end of the parallel region (using nowait).
