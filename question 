@@ -12,3 +12,8 @@ the current year should be assumed.
 Write a shell script which receives two filenames as arguments. It should 
 check whether the two file’s contents are same or not. If they are same the 
 second file should be deleted. (Hint: Use the cmp command to compare files)
+ 
+1-Write a report on the stages of the system development life cycle.
+2 -Compare and contrast SSAD and OOAD. 
+3- Create a diagram representing the SDLC stages. 
+4 -Write a C program to simulate a simple system development task.
