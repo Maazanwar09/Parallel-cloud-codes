@@ -4,3 +4,11 @@ thread should work on a separate portion of the array. Use OpenMP to:
 (using firstprivate). 
  Capture the last processed index for each thread (using lastprivate). 
  Avoid implicit barriers at the end of the parallel region (using nowait).
+  
+Write a shell script which receives any year from the keyboard and 
+determines whether the year is a leap year or not. If no argument is supplied 
+the current year should be assumed. 
+6 
+Write a shell script which receives two filenames as arguments. It should 
+check whether the two file’s contents are same or not. If they are same the 
+second file should be deleted. (Hint: Use the cmp command to compare files)
