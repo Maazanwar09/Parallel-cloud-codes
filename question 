@@ -17,3 +17,36 @@ second file should be deleted. (Hint: Use the cmp command to compare files)
 2 -Compare and contrast SSAD and OOAD. 
 3- Create a diagram representing the SDLC stages. 
 4 -Write a C program to simulate a simple system development task.
+
+6.	1	Compute the sum of all elements in a large array using OpenMP's, use 
+proper constructs and clauses to avoid data races and similar conditions of 
+the following given serial code. 
+Snippet of the Sequential solution is given: 
+int n = 1000000; 
+double array[n]; 
+double sum = 0.0; 
+// Initialize the array with values 
+for (int i = 0; i < n; i++) { 
+    sum += array[i]; }
+Analysis: To do
+•	Test with different sizes of the array.
+•	Run the program using different numbers of threads (e.g., 2, 4, 8).
+•	Measure execution time, calculate speedup, and efficiency.
+•	Understand how the reduction clause works and its importance in parallel programming.	
+	2	Implement a matrix multiplication algorithm using OpenMP to improve performance.
+a.	Create a sequential matrix multiplication function:
+Implement a function that takes two matrices as input and returns their product. Use nested loops to iterate through the elements of the matrices.
+b.	Parallelize the matrix multiplication using OpenMP:
+Use the omp parallel for directive to parallelize the outer loop of the matrix multiplication. Consider using proper clauses to correctly accumulate the product elements or some other clauses.
+c.	Analysis: To do
+•	Test with different array sizes (e.g., 10,000; 100,000; 1,000,000). 
+•	Run with different numbers of threads (e.g., 2, 4, 8).
+•	Measure execution time and calculate speedup and efficiency.
+•	Compare results with the sequential version to observe performance gains.	
+	3	Create a program that simulates a mixed workload, where part of the work can be parallelized, and part cannot. Specifically, consider a scenario where 70% of the workload is parallelizable, and 30% is inherently sequential. Use OpenMP to parallelize the parallelizable part and study how actual speedup compares with predictions made by Amdahl's Law. Consider using proper clauses to correctly accumulate the results.	
+	4	You have a large array of integers, and you need to compute the total count of occurrences of a specific value (e.g., 7) in the array. To ensure that multiple threads do not update the count variable simultaneously, use OpenMP to parallelize the counting process while employing critical sections to avoid race conditions. Write the Sequential and parallel implementation:
+Analysis: To do
+•	Test with different array sizes (e.g., 10,000; 100,000; 1,000,000).
+•	Run with different numbers of threads (e.g., 2, 4, 8).
+•	Measure execution time and calculate speedup and efficiency.
+Compare results with the sequential version to observe performance gains.	
